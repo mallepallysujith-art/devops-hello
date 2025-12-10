@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Clone') {
             steps {
-                git 'https://github.com/mallepallysujith-art/devops-hello.git'
+                git branch: 'main', url: 'https://github.com/mallepallysujith-art/devops-hello.git'
             }
         }
 
@@ -33,4 +33,5 @@ pipeline {
         }
     }
 }
+
 
