@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    environment {
+        IMAGE_NAME = "msujithreddy/devops-hello"
+    }
+
     stages {
         stage('Clone') {
             steps {
@@ -20,9 +24,18 @@ pipeline {
             }
         }
 
-        stage('Docker Build') {
+        stage('Docker Build & Push') {
             steps {
-                echo 'Building Docker image...'
+                script {
+                    withCredentials([usernamePassword(credentialsId: 'dockerhub', usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
+                        sh """
+                        echo "$DOCKER_PASS" | docker login -u "$DOCKER_USER" --password-stdin
+                        docker build -t $IMAGE_NAME .
+                        docker push $IMAGE_NAME
+                        docker logout
+                        """
+                    }
+                }
             }
         }
 
@@ -33,5 +46,6 @@ pipeline {
         }
     }
 }
+
 
 
