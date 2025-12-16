@@ -34,7 +34,4 @@ docker ps
 
 http://100.48.72.194:5000    : this to Access Flask app in browser :it will show Hello World from devops pipline 
 
-### 1️⃣ Minikube & Kubectl Setup
-This screenshot shows the installation and setup of `kubectl` and `minikube` on the EC2
-<img width="1470" height="956" alt="### Minikube   Kubectl Setup ! Minikube Setup (screenshots:01_minikube_setup_terminal png)" src="https://github.com/user-attachments/assets/2bae428f-b6e0-40ba-a9a0-ceed45e400b5" />
 
