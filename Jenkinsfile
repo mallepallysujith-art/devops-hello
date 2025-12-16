@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         IMAGE_NAME = "msujithreddy/devops-hello:latest"  // Your Docker Hub image
-        SONARQUBE = "Sonarqube"                          // SonarQube name in Jenkins
+        SONARQUBE = "sonarqube"                          // SonarQube name in Jenkins
         DOCKERHUB_CREDENTIALS = "dockerhub"             // Jenkins credentials ID for Docker Hub
     }
 
